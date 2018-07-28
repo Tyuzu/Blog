@@ -1,0 +1,787 @@
+
+
+<html><head><style>
+
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+        * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      }
+      html, body{
+      height:100%;
+      width:100%;
+      font-family: 'Raleway', 'Roboto Slab', sans-serif;
+      font-size: 100%;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      }
+      
+      
+      .threedot {
+      width: 2.8em;
+      transition: -webkit-transform .325s ease;
+      transition: transform .325s ease;
+      transition: transform .325s ease, -webkit-transform .325s ease;
+      }
+      .srchicon {
+      fill:#000000;
+      stroke:#4d4d4d;
+      width: 2em;
+      height: 2.3em;
+      }
+      
+      @media screen and (max-width: 640px) {
+      .threedot {
+        display: block;
+        margin: 3px 0.1em;
+        -webkit-transform: translate(0px, 3px);
+        transform: translate(0px, 3px);
+      }
+      .toast__cell{
+      display:flex;
+      justify-content: space-around;
+      flex-flow: column;
+      }
+      .col3mid {
+      order: 1;
+      }
+      .col3lt {
+      order: 3;
+      }
+      .col3rt {
+      order: 2;
+      }
+      .flex-area {
+        flex: 3 1 auto;
+        -webkit-flex: 3 1 auto;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: column;
+        flex-flow: column;
+      }
+      }
+          
+      .col3lt {
+                flex: 2 1 16%;
+                -webkit-flex: 2 1 16%;
+              }
+      
+              .col3mid {
+                flex: 2 1 59%;
+                -webkit-flex: 2 1 59%;
+              }
+              .col3rt {
+                flex: 2 1 25%;
+                -webkit-flex: 2 1 25%;
+              }
+      
+              .row {
+    padding: 0px 8px 0px 8px;
+    position: relative;
+    display: flex;
+    background: #ffffff;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(240, 238, 238);
+}
+      @media screen and (max-width: 1199px) and (min-width: 641px){
+      .threedot {
+        display: block;
+        margin: 3px 1.4em;
+        -webkit-transform: translate(0px, 8px);
+        transform: translate(0px, 8px);
+      }
+      
+      .col3rt,.col3lt,.col3mid {
+      padding: 0 8px;
+      }
+      .flex-area {
+        flex: 2 1 auto;
+        -webkit-flex: 2 1 auto;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row;
+        flex-flow: row;
+      }
+      }
+      @media screen and (min-width: 1200px) {
+      .form-inline {
+        max-width: 40em;
+      }
+      
+      .col3lt,.col3mid,.col3rt {
+        padding: 0 8px;
+      }
+      .threedot {
+        display: block;
+        margin: 0px 0.5em;
+        -webkit-transform: translate(0px, 6px);
+        transform: translate(0px, 6px);
+      }
+      .flex-area {
+        flex: 3 1 auto;
+        -webkit-flex: 3 1 auto;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row;
+        flex-flow: row;
+      }
+      
+      body::-webkit-scrollbar {
+      width: 14px;
+      }
+      body::-webkit-scrollbar-thumb {
+      background-color: #555;
+      }
+      }
+      .form_container {
+      display: flex;
+      border-style: solid;
+      background: #e8e8e8;
+      }
+      .total-results {display:inline-block; }
+      .form-inline {
+      padding: 7px;
+      width: 100%;
+      }
+      button {
+      /*background-image: linear-gradient(to right, #4ee43e 0%, #1ee63a 25%, #43e431 50%, #27e642 75%, #4ee43e 100%); #ff9800;*/
+      background:transparent;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 0em 0.5em;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      }
+      button:hover {
+      background: #ff9800;
+      }
+      button:focus {
+      background: #002c73;
+      }
+      .search-field {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        background: rgba(255, 255, 255, 0.4);
+        padding: 12px;
+        color: #000;
+        font-size: 1.1em;
+      }
+      
+      input::placeholder {
+      font-size: 20px;
+      font-family: "Helvetica",sans-serif;
+      }
+      .pincode {
+      box-shadow: 0px 6px 8px -1px rgba(0, 0, 0, 0.2);
+      }
+      
+      </style>
+      </head><body>
+            <div class="row">
+                    <div>
+                            <div class="pincodeMain" style="width: 60px; height: 60px;"><!--?xml version="1.0" encoding="utf-8"?-->
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800" x="0px" y="0px">
+                                    <g id="art">
+                                        <image id="image" x="100" y="100" width="600" height="600" xlink:href="https://i.pinimg.com/280x280_RS/b4/7a/dc/b47adc472f48cae398df15ee09dbac4e.jpg" preserveAspectRatio="xMidYMid slice"></image>
+                                        <path id="background" d="M0,0V800H800V0ZM400,700c-165.69,0-300-134.31-300-300S234.31,100,400,100,700,234.31,700,400,565.69,700,400,700Z" style="fill: #ffffff"></path>
+                                    </g>
+                                    
+                                </svg>
+                                </div>
+                    </div><form class="form-inline " id="search-form" name="search-form" onsubmit="return search()">
+                      <div width="100%" class="form_container">
+                        <div class="d3 float-right" style="width:100%;">
+                          <input class="form-control search-field" type="search" id="query" style="width:100%;" placeholder="How to ...">
+                        </div>
+                        <button class="" type="submit" id="search-btn" name="search-btn" value="">
+                          <svg class="srchicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path d="M27,14 C27,6.82029825 21.1797017,1 14,1 C6.82029825,1 1,6.82029825 1,14 C1,21.1797017 6.82029825,27 14,27 C21.1797017,27 27,21.1797017 27,14 Z M3,14 C3,7.92486775 7.92486775,3 14,3 C20.0751322,3 25,7.92486775 25,14 C25,20.0751322 20.0751322,25 14,25 C7.92486775,25 3,20.0751322 3,14 Z M29.7368574,32.6738729 C30.1154992,33.0759286 30.7483796,33.0949094 31.1504354,32.7162676 C31.5524911,32.3376258 31.5714719,31.7047454 31.1928301,31.3026896 C31.1928301,31.3026896 23.7390742,23.3273941 23.3890738,23.0163752 C23.3890738,22.9433594 22.798584,23.5787354 22.6536865,23.7145996 C22.5087891,23.8504639 21.8980149,24.263855 21.8980149,24.3503027 C25.4563599,28.1820068 29.7368574,32.6738729 29.7368574,32.6738729 Z"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </form>
+                    
+                    
+                  <div>
+                            <div class="pincodeMain" style="width: 60px; height: 60px;"><!--?xml version="1.0" encoding="utf-8"?-->
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800" x="0px" y="0px">
+                                    <g id="art">
+                                        <image id="image" x="100" y="100" width="600" height="600" xlink:href="https://i.pinimg.com/280x280_RS/b4/7a/dc/b47adc472f48cae398df15ee09dbac4e.jpg" preserveAspectRatio="xMidYMid slice"></image>
+                                        <path id="background" d="M0,0V800H800V0ZM400,700c-165.69,0-300-134.31-300-300S234.31,100,400,100,700,234.31,700,400,565.69,700,400,700Z" style="fill: #ffffff"></path>
+                                    </g>
+                                    <g id="data">
+                                        <line x1="400.5" y1="60.5" x2="400.50101" y2="60.500999" style="fill: none; stroke: #fab904; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="436.44043" y1="62.404907" x2="436.44144" y2="62.405907" style="fill: none; stroke: #0fa573; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="477.83698" y1="69.412415" x2="477.83798" y2="69.413414" style="fill: none; stroke: #ff3700; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="518.0542" y1="81.468658" x2="518.05518" y2="81.469658" style="fill: none; stroke: #0084ff; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="545.716" y1="93.071442" x2="545.71698" y2="93.072441" style="fill: none; stroke: #0fa573; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="624.49243" y1="144.71222" x2="624.49341" y2="144.71323" style="fill: none; stroke: #fab904; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="650.27606" y1="169.82294" x2="650.27704" y2="169.82394" style="fill: none; stroke: #0084ff; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="676.80286" y1="202.36688" x2="676.80383" y2="202.36789" style="fill: none; stroke: #ff3700; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="699.11633" y1="237.93216" x2="699.11731" y2="237.93317" style="fill: none; stroke: #fab904; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="714.62781" y1="270.40887" x2="714.62878" y2="270.40988" style="fill: none; stroke: #0084ff; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="726.61945" y1="304.34329" x2="726.62042" y2="304.3443" style="fill: none; stroke: #fab904; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="733.82544" y1="333.46152" x2="733.82642" y2="333.46252" style="fill: none; stroke: #0fa573; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="738.89771" y1="433.46976" x2="738.89868" y2="433.47076" style="fill: none; stroke: #ff3700; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="733.5166" y1="469.05609" x2="733.51758" y2="469.0571" style="fill: none; stroke: #0fa573; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="726.17896" y1="498.13824" x2="726.17993" y2="498.13925" style="fill: none; stroke: #0084ff; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="714.0332" y1="532.01782" x2="714.03418" y2="532.0188" style="fill: none; stroke: #0fa573; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="698.37421" y1="564.42365" x2="698.37518" y2="564.42462" style="fill: none; stroke: #fab904; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="686.06989" y1="585.026" x2="686.07086" y2="585.02698" style="fill: none; stroke: #0fa573; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="628.9624" y1="652.30334" x2="628.96338" y2="652.30432" style="fill: none; stroke: #ff3700; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="615.31738" y1="664.04028" x2="615.31836" y2="664.04126" style="fill: none; stroke: #0084ff; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="591.25305" y1="681.94855" x2="591.25403" y2="681.94952" style="fill: none; stroke: #fab904; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="555.1098" y1="703.31317" x2="555.11078" y2="703.31415" style="fill: none; stroke: #0084ff; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="522.23401" y1="717.95996" x2="522.23499" y2="717.96094" style="fill: none; stroke: #ff3700; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="493.7825" y1="727.45312" x2="493.78351" y2="727.4541" style="fill: none; stroke: #0fa573; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="470.48846" y1="733.21851" x2="470.48947" y2="733.21948" style="fill: none; stroke: #0084ff; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="376.51453" y1="739.65295" x2="376.51553" y2="739.65393" style="fill: none; stroke: #ff3700; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="340.79803" y1="735.21729" x2="340.79904" y2="735.21826" style="fill: none; stroke: #fab904; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="299.99896" y1="725.30688" x2="299.99997" y2="725.30786" style="fill: none; stroke: #0084ff; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="271.76178" y1="715.18469" x2="271.76279" y2="715.18567" style="fill: none; stroke: #0fa573; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="255.28966" y1="707.93121" x2="255.29066" y2="707.93219" style="fill: none; stroke: #0084ff; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="233.96661" y1="696.9231" x2="233.96762" y2="696.92407" style="fill: none; stroke: #fab904; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="159.02782" y1="639.85577" x2="159.02882" y2="639.85675" style="fill: none; stroke: #0084ff; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="146.69991" y1="626.74219" x2="146.70091" y2="626.74316" style="fill: none; stroke: #ff3700; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="127.7468" y1="603.49182" x2="127.7478" y2="603.4928" style="fill: none; stroke: #fab904; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="104.80743" y1="568.32703" x2="104.80843" y2="568.328" style="fill: none; stroke: #0fa573; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="91.166046" y1="541.61169" x2="91.167046" y2="541.61267" style="fill: none; stroke: #0084ff; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="84.132111" y1="525.04462" x2="84.13311" y2="525.04559" style="fill: none; stroke: #0fa573; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="77.984741" y1="508.12854" x2="77.985741" y2="508.12955" style="fill: none; stroke: #ff3700; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="60.619385" y1="409.50897" x2="60.620384" y2="409.50998" style="fill: none; stroke: #fab904; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="61.57132" y1="373.53067" x2="61.572319" y2="373.53168" style="fill: none; stroke: #ff3700; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="66.321075" y1="337.85455" x2="66.322075" y2="337.85556" style="fill: none; stroke: #0fa573; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="76.590149" y1="297.14429" x2="76.591148" y2="297.14529" style="fill: none; stroke: #0084ff; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="91.798462" y1="258.01013" x2="91.799461" y2="258.01114" style="fill: none; stroke: #ff3700; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="105.5589" y1="231.35587" x2="105.5599" y2="231.35687" style="fill: none; stroke: #0084ff; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="159.02342" y1="161.14867" x2="159.02443" y2="161.14967" style="fill: none; stroke: #ff3700; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="181.05952" y1="140.79657" x2="181.06053" y2="140.79758" style="fill: none; stroke: #0fa573; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="204.80368" y1="122.46591" x2="204.80469" y2="122.46691" style="fill: none; stroke: #ff3700; stroke-width: 8.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="230.07109" y1="106.29941" x2="230.0721" y2="106.30041" style="fill: none; stroke: #0084ff; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="262.12506" y1="89.932159" x2="262.12607" y2="89.933159" style="fill: none; stroke: #fab904; stroke-width: 20.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                        <line x1="295.72958" y1="77.044952" x2="295.73059" y2="77.045952" style="fill: none; stroke: #0fa573; stroke-width: 32.00; stroke-linecap: round; stroke-linejoin: round;"></line>
+                                    </g>
+                                </svg>
+                                </div>
+                    </div></div>
+          <div class="sidebar">
+                <div class="links">
+                        <div class="social">
+                            <svg class="html-logo" xmlns="http://www.w3.org/2000/svg" height="2.5em" width="2.5em" viewBox="0 0 512 512">
+                          <path d="M108.4 0h23v22.8h21.2V0h23v69h-23V46h-21v23h-23.2M206 23h-20.3V0h63.7v23H229v46h-23M259.5 0h24.1l14.8 24.3L313.2 0h24.1v69h-23V34.8l-16.1 24.8l-16.1-24.8v34.2h-22.6M348.7 0h23v46.2h32.6V69h-55.6"></path>
+                          <path fill="#e44d26" d="M107.6 471l-33-370.4h362.8l-33 370.2L255.7 512"></path>
+                          <path fill="#f16529" d="M256 480.5V131H404.3L376 447"></path>
+                          <path fill="#ebebeb" d="M142 176.3h114v45.4h-64.2l4.2 46.5h60v45.3H154.4M156.4 336.3H202l3.2 36.3 50.8 13.6v47.4l-93.2-26"></path>
+                          <path fill="#fff" d="M369.6 176.3H255.8v45.4h109.6M361.3 268.2H255.8v45.4h56l-5.3 59-50.7 13.6v47.2l93-25.8"></path>
+                      </svg></div>
+                        <div class="social">
+                              <svg height="2.5em" width="2.5em" viewBox="0 0 256 361" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                                  <g>
+                                      <path d="M127.843868,360.087912 L23.6617143,331.166242 L0.445186813,70.7657143 L255.554813,70.7657143 L232.31367,331.125451 L127.843868,360.087912 L127.843868,360.087912 Z" fill="#264DE4"></path>
+                                      <path d="M212.416703,314.546637 L232.277802,92.0573187 L128,92.0573187 L128,337.950242 L212.416703,314.546637 L212.416703,314.546637 Z" fill="#2965F1"></path>
+                                      <path d="M53.6685714,188.636132 L56.530989,220.572835 L128,220.572835 L128,188.636132 L53.6685714,188.636132 L53.6685714,188.636132 Z" fill="#EBEBEB"></path>
+                                      <path d="M47.917011,123.994725 L50.8202198,155.932132 L128,155.932132 L128,123.994725 L47.917011,123.994725 L47.917011,123.994725 Z" fill="#EBEBEB"></path>
+                                      <path d="M128,271.580132 L127.860044,271.617407 L92.2915165,262.013187 L90.0177582,236.54189 L57.957978,236.54189 L62.4323516,286.687648 L127.853011,304.848879 L128,304.808088 L128,271.580132 L128,271.580132 Z" fill="#EBEBEB"></path>
+                                      <path d="M60.4835165,0 L99.1648352,0 L99.1648352,16.1758242 L76.6593407,16.1758242 L76.6593407,32.3516484 L99.1648352,32.3516484 L99.1648352,48.5274725 L60.4835165,48.5274725 L60.4835165,0 L60.4835165,0 Z" fill="#000000"></path>
+                                      <path d="M106.901099,0 L145.582418,0 L145.582418,14.0659341 L123.076923,14.0659341 L123.076923,16.8791209 L145.582418,16.8791209 L145.582418,49.2307692 L106.901099,49.2307692 L106.901099,34.4615385 L129.406593,34.4615385 L129.406593,31.6483516 L106.901099,31.6483516 L106.901099,0 L106.901099,0 Z" fill="#000000"></path>
+                                      <path d="M153.318681,0 L192,0 L192,14.0659341 L169.494505,14.0659341 L169.494505,16.8791209 L192,16.8791209 L192,49.2307692 L153.318681,49.2307692 L153.318681,34.4615385 L175.824176,34.4615385 L175.824176,31.6483516 L153.318681,31.6483516 L153.318681,0 L153.318681,0 Z" fill="#000000"></path>
+                                      <path d="M202.126769,188.636132 L207.892396,123.994725 L127.889582,123.994725 L127.889582,155.932132 L172.892132,155.932132 L169.98611,188.636132 L127.889582,188.636132 L127.889582,220.572835 L167.216527,220.572835 L163.509451,261.992791 L127.889582,271.606857 L127.889582,304.833407 L193.362286,286.687648 L193.842637,281.291956 L201.347516,197.212132 L202.126769,188.636132 L202.126769,188.636132 Z" fill="#FFFFFF"></path>
+                                  </g>
+                              </svg>
+                        </div>
+                        <div class="social"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="2.5em" width="2.5em" viewBox="0 0 325 450" enable-background="new 0 0 325 450" xml:space="preserve">
+                          <g>
+                              <polygon fill="#E5A129" points="40.845,401.254 13.775,97.632 311.225,97.632 284.127,401.205 162.318,434.975 	"></polygon>
+                              <polygon fill="#F0BE21" points="162.25,408.787 260.678,381.5 283.836,122.083 162.25,122.083 	"></polygon>
+                              <polygon fill="#EBEBEB" points="162.193,331.426 162.031,331.473 120.559,320.272 117.906,290.575 97.756,290.575 80.527,290.575 
+                                  85.744,349.043 162.021,370.219 162.193,370.17 	"></polygon>
+                              <polygon fill="#EBEBEB" points="167.209,271.937 167.209,234.7 121.355,234.7 126.732,176.258 167.312,175.177 167.209,136.454 
+                                  93.065,136.454 90.311,163.903 81.559,261.938 80.651,271.937 90.686,271.937 	"></polygon>
+                              <polygon fill="#FFFFFF" points="166.957,175.229 167.12,175.183 207.791,177.632 211.242,216.079 231.393,216.079 248.623,216.079 
+                                  242.109,144.133 167.129,136.437 166.957,136.485 	"></polygon>
+                              <polyline fill="#FFFFFF" points="244.784,175.343 241.593,136.454 162.99,136.454 162.99,160.606 162.99,175.246 162.99,175.343 
+                                  244.784,175.343 	"></polyline>
+                              <polygon fill="#FFFFFF" points="162.064,234.718 162.064,271.954 207.918,271.954 203.596,320.247 162.064,331.459 
+                                  162.064,370.201 238.404,349.043 238.963,342.752 247.715,244.717 248.623,234.718 238.588,234.718 	"></polygon>
+                              <path fill="#FFFFFF" d="M240,173.693"></path>
+                              <g>
+                                  <polygon fill="#151515" points="214.945,30.571 190.256,30.571 215.932,58.431 215.932,71.691 163.049,71.691 163.049,56.165 
+                                      188.719,56.165 163.049,28.306 163.049,15.025 214.945,15.025 214.945,30.571 		"></polygon>
+                                  <path fill="#020202" d="M153.631,15.05v56.617h-45.543V52.953h26.613V15.05h18.928H153.631z"></path>
+                              </g>
+                              <path fill="#FFFFFF" d="M239.51,173.693"></path>
+                          </g>
+                          </svg></div>
+                        <div class="social"><svg viewBox="0 0 128 128" width="2.5em" height="2.5em" fill="#43853d">
+                              <path d="M112.771 30.334l-44.097-25.605c-2.781-1.584-6.402-1.584-9.205 0l-44.568 25.605c-2.87 1.651-4.901 4.754-4.901 8.073v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623c-.712 0-2.306 1.061-2.306 1.773v50.49c0 3.896-3.524 7.773-10.11 4.48l-12.167-7.013c-.424-.23-.723-.693-.723-1.181v-51.142c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754c1.417.82 3.027 1.246 4.647 1.246 1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083v-51.142c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z"></path>
+                              </svg></div>
+                        <div class="social"><img src="https://res.cloudinary.com/elafreet/image/upload/v1528566690/google-earth-side.png" alt="google-earth"></div>
+                        <div class="social"><img src="https://res.cloudinary.com/elafreet/image/upload/v1528566690/chromeside.png" alt="googlechrome"></div>
+                        <div class="social"><img src="https://res.cloudinary.com/elafreet/image/upload/v1528566693/music-player-side.png" alt="music"></div>
+                        <div class="social"><img src="https://res.cloudinary.com/elafreet/image/upload/v1528566693/news-side.png" alt="news"></div>
+                      </div>
+                      </div><style>
+          .poptags {
+              margin : 8px 0 16px 0;
+              position: relative;
+          }
+          .toast__container {
+          vertical-align: middle;
+          }
+          
+          .toast__cell{
+          display:grid;
+          }
+          
+          .toast__svg{
+          fill:#fff;
+          }
+          
+          .toast {
+              margin: 6px 0px;
+          text-align:left;
+          padding: 10px 0;
+          background-color:#fff;
+          max-width: 500px;
+          top: 0px;
+          position:relative;
+          box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.11);
+          border-top-left-radius:4px;
+          border-bottom-left-radius: 4px;
+          }
+          
+          
+          .toast:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          height: 100%;
+          border-top-left-radius:4px;
+          border-bottom-left-radius: 4px;
+          
+          }
+          
+          .toast__type {
+          color: #3e3e3e;
+          font-weight: 700;
+          margin-top: 0;
+          margin-bottom: 8px;
+          }
+          
+          .toast__message {
+          font-size: 14px;
+          margin-top: 0;
+          margin-bottom: 0;
+          color: #878787;
+          }
+          
+.toast__content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+          
+          .toast--green:before{
+          background-color:#2BDE3F;
+          }
+          
+          .toast--blue:before{
+          background-color:#1D72F3;
+          }
+          
+          .toast--yellow:before{
+          background-color:#FFC007;
+          }
+
+          .toast--red:before{
+          background-color:rgb(255, 106, 7);
+          }
+
+.sidebar {
+    background: #fff;
+    flex-basis: 8%;
+    box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.11);
+}
+.sidebar .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: scroll;
+}
+.sidebar .links .social {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 18px;
+    cursor: pointer;
+}
+
+
+          </style>  
+          
+        
+        <div class="flex-area">
+          <article class="col3lt">
+                <section class="poptags">
+<div class="container">
+  <div class="card blog-card">
+    <div class="blog-img">
+    <img src="https://i.pinimg.com/564x/30/c9/85/30c985667ffad8d96c75564aa038c08c.jpg" alt="Card image cap"></div>
+    <div class="card-block blog-body">
+      <h3 class="card-title blog-title">How Hungerista Creates a Niche for Cravers</h3>
+      <p class="card-text blog-desc">How Hungerista Creates a Niche for Cravers How Hungersita Creates a Niche for Cravers</p>
+      <div class="blog-info">
+        <span class="blog-cat">Blogger Level</span>
+        <span class="blog-date">Date</span>
+      </div>
+      
+      <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+    </div>
+  </div>
+</div>
+</section>
+          </article><article class="col3mid">
+                <section class="poptags">
+<style>
+
+a{
+  text-decoration:none;
+  color:#aaa
+}
+nav{
+  position:fixed;
+  background:rgba(20,20,20,0.9);
+  z-index:9;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top:-90px;
+  transition:all 0.4s
+}
+nav a{
+  font-size:1em;
+  padding:2em 1.5em;
+  transition:all 0.4s
+}
+nav a:hover{
+   background: rgba(252, 198, 0, 0.6);
+   color: #333;
+}
+/* Logo here */
+nav:before{
+  content:"NodCMS";
+  position:absolute;
+  left:10px;
+  font-size:10px;
+  border:1px solid;
+  border-radius:5px;
+  padding:9px 5px
+}
+.wrapper{
+  position: relative;
+  padding-bottom: 56.25125%;
+  height: 0;
+}
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height:200px;
+  background-color:#999;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  overflow:hidden;  
+  animation: fader 60s  infinite; 
+}
+.hero:before{
+  content:" ";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 90%,rgba(0,0,0,0.65) 100%);
+  z-index:0
+}
+@keyframes fader {
+  0%,30%,100%{ background-image:url(https://68.media.tumblr.com/02ace438b88c1b42acdf041c9cfb40a0/tumblr_oj92canMJ21vm743bo1_1280.jpg)}
+33%,60% { background-image: url(https://68.media.tumblr.com/6dd9c3eb4e1b814138cd88808fa4924c/tumblr_oix3a6uSrb1tgbn6xo1_1280.jpg); }
+63%,97% { background-image: url(https://68.media.tumblr.com/9fe927a6c887499af03edae78bdd4538/tumblr_ok4v0050Lo1uz44pdo1_500.jpg) }
+}
+.hero h1{
+  padding:.5em;
+  width:50%;
+  min-width:190px;
+  position:absolute;
+  bottom:0
+}
+.hero a{
+  text-decoration:none;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background:#fff;
+  padding:0.12em 0.5em;
+  font-family: share;
+  font-size: calc(1vw + 1vh + 3.5vmin);  
+  line-height:calc(1vw + 1vh + 6.5vmin);
+  color:#000;
+  text-transform:uppercase;
+  mix-blend-mode:screen;
+  transition:all 0.4s
+}
+.hero a:hover{
+  line-height:1.3em;
+  mix-blend-mode:exclusion;
+}
+.container{
+  padding:0.1em 1em;
+  text-align:justify;
+  line-height:1.5em;
+  letter-spacing:0.02em;
+  background:#fff;
+  margin:1em
+}
+
+
+.gen,.sel,.men{
+  display:flex;
+  position:absolute;
+  align-items:center;
+  justify-content:center;
+  right:30px;
+  bottom:30px;
+  color:#333;
+  background:rgba(255,255,255,0.8);
+  width:30px;
+  height:30px;
+  text-align:center;
+  border-radius:50%;
+  transition:all 0.2s;
+  z-index:5
+}
+.men{
+  background:rgba(0,0,0,0.1);
+  color:#fff;
+  top:20px;
+  height:1.4em;
+  width:1.5em;
+  overflow:hidden;
+  bottom:auto !important;
+  border-radius:0;  
+  font-size:1.8em;
+  font-weight:700
+}
+.men:hover{
+  background:rgba(220,220,220,0.91);
+  color:#111;
+}
+.men:hover + nav, nav:hover{
+  top:0;
+}
+.sel{
+  right:70px;
+}
+.gen:hover,.sel:hover{
+  background:#0a2f54;
+  color:#ddd
+}
+
+footer{
+  background:#0a0c10;
+  padding:1em;
+  text-align:center;
+  color:#ddd;
+  font-size:11px
+}
+
+
+[data-tip]::after {
+  text-transform: none; 
+  font-size: .9em;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  top:40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  content: attr(data-tip); 
+  font-family: sans-serif;
+  text-align: center;
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 1em 1.5em;
+  box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  z-index: 1000;
+}
+
+[data-tip]:hover::after {
+  display: block;
+  opacity:1
+}
+
+
+/* follow me @nodws */
+#btn-twtr{
+  clear:both;
+  color:#fff;
+  border:2px solid;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+  font-family:sans-serif;
+  font-size:14px;
+  width:13em;
+  padding:5px 10px;
+  font-weight:600;
+  margin:40px auto;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.8
+}#btn-twtr:hover{color:#fff;opacity:1}
+</style>
+<div class="wrapper">
+  <div class="hero"><h1><a href="#">Create better Titles for your blog</a></h1>
+  </div> 
+   <a href="#" data-tip="Share" class="gen">&#9874;</a>
+  <a href="#" data-tip="Favorites" class="sel">&starf;</a>
+</div>
+<div class="container">
+<p>Rockstar developer internet of things bleeding edge browser extension social capital Sandboxing. Podcasting visionary, feeds; open-source one-to-one user-contributed world-class e-markets action-items rich initiatives proactive real-time, webservices; synergies, granular holistic relationships, portals communities. Dynamic redefine, web-enabled authentic folksonomies, distributed implement B2B iterate, channels beta-test, web-enabled disintermediate harness repurpose orchestrate. 
+  </p>
+  <p>
+Maximize deliverables initiatives brand next-generation redefine, channels one-to-one innovative strategic architectures. Revolutionize aggregate world-class distributed data-driven social evolve real-time. Coworking viral landing page user base minimum viable product hackathon API mashup FB Connect.</p>
+  
+</div>
+
+                    </section>
+          </article><article class="col3rt">
+      
+            <section class="poptags">
+              <div class="toast__container">
+                  <div class="toast__cell">
+                      
+                  
+                  <div class="toast toast--blue">
+                    
+                        <div class="toast__content">
+                          <p class="toast__type">Info</p>
+                          <p class="toast__message">Anyone with access can view your invited visitors.</p>
+                        </div>
+                        
+                      </div>
+                      
+                  <div class="toast toast--green">
+                    
+                    <div class="toast__content">
+                      <p class="toast__type">Success</p>
+                      <p class="toast__message">Anyone with access can view your invited visitors.</p>
+                    </div>
+                    
+                  </div>
+                  
+                  
+                  <div class="toast toast--yellow">
+                    
+                    <div class="toast__content">
+                      <p class="toast__type">Warning</p>
+                      <p class="toast__message">Anyone with access can view your invited visitors.</p>
+                    </div>
+                    
+                  </div>
+                  
+                  
+                  <div class="toast toast--red">
+                    
+                        <div class="toast__content">
+                          <p class="toast__type">Danger</p>
+                          <p class="toast__message">Anyone with access can view your invited visitors.</p>
+                        </div>
+                        
+                      </div>
+                      
+                  </div>
+                  </div>
+              </section>
+          </article>
+          
+          
+        </div>
+                <style>
+                  @import url("https://fonts.googleapis.com/css?family=PT+Sans");
+              body {
+                font-family: 'PT Sans', sans-serif !important;
+              }
+              .container {
+                margin-top: 10px;
+              }
+              .container .blog-card {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+    background: #ffffff;
+    box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.11);
+}
+              .container .blog-card .blog-img {
+                display: block;
+              }
+              .container .blog-card .blog-img img {
+                width: 100%;
+                height: auto;
+              }
+              .container .blog-card .blog-body {
+                padding: 10px;
+              }
+              .container .blog-card .blog-body .blog-title {
+                font-size: 0.85em;
+                font-weight: 600;
+                margin: 0px 0 8px 0;
+              }
+              .container .blog-card .blog-body .blog-desc {
+                font-size: 0.7em;
+                color: grey;
+                margin-bottom: 5px;
+              }
+              .container .blog-card .blog-body .blog-info {
+                font-size: 0.7em;
+                color: grey;
+                margin-bottom: 10px;
+              }
+              .container .blog-card .blog-body .blog-info .blog-date {
+                margin-left: 10px;
+              }
+              .container .blog-card .blog-body .btn-read-more {
+                background-color: white;
+                color: #9BE1CC;
+                border: solid 2px #9BE1CC;
+                padding: 1px 8px 2px 8px;
+                font-size: 0.75em;
+                font-weight: 400;
+              }
+              
+                </style>
+              
+        </body></html>
