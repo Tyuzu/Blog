@@ -103,14 +103,6 @@
       <div class="infocon">
          <div class="feedcon">
             <section class="poptags">
-               <div class="container">
-                  <div id="recentpostsae"></div>
-                  <div id="recentpostnavfeed"></div>
-               </div>
-            </section>
-         </div>
-         <div class="mediacon">
-            <section class="poptags">
                <form class="search" action="https://blog.tyuzu.com/search" method="get" role="search">
                   <div class="search__field">
                      <input name="q" placeholder="Search..." title="Search for:" type="search" value="" class="search__input"/>
@@ -122,6 +114,12 @@
                      </svg>
                   </button>
                </form>
+            </section>
+            <section class="poptags">
+               <div class="container">
+                  <div id="recentpostsae"></div>
+                  <div id="recentpostnavfeed"></div>
+               </div>
             </section>
          </div>
       </div>
@@ -164,9 +162,9 @@
          background: #fff;
          }
          .feedcon {
-         flex: 2 1 60%;
-         -webkit-flex: 2 1 60%;        
-         }
+    max-width: 840px;
+    margin: 0 auto;
+}
          .mediacon {
          flex: 2 1 40%;
          -webkit-flex: 2 1 40%;        
